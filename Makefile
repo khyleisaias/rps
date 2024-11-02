@@ -4,4 +4,4 @@ run: main
 	./main
 
 main: main.c
-	tcc main.c -g -o main
+	$(CC) main.c -g -o main

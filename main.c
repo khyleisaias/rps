@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
 /*
   ROCK-PAPER-SCISSOR game in C
 
@@ -8,14 +10,17 @@
 */
 
 // TODO: Make a rps clone in c
+static char p1[2048];
+static char p2[2048];
 
 int game() {
   char p1_hit[100];
   char p2_hit[100];
 
-  printf("Player 1's turn: ");
-  scanf("%s", &p1_hit);
-  printf("Player 2's turn: ");
+  printf("%s's turn: ", p1);
+  scanf("%s", &p1_hit); 
+  
+  printf("%s's turn: ", p2);
   scanf("%s", &p2_hit);
 
   if (strcmp(p1_hit, p2_hit) == 0) {
@@ -54,10 +59,8 @@ int game() {
   }
 }
 
-
 int main() {
-  char p1[2048];
-  char p2[2048];
+  
 
   printf("Welcome to Rock-Paper-Scissors!!\n");
   printf("To play this game, type R for rock, P for paper, and S for scissors.\n");
